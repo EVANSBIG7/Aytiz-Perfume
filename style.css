@@ -1,0 +1,3490 @@
+/* ==========================================
+   AYTIZ PERFUME
+   GLOBAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.ayt-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    padding: 18px 5%;
+}
+
+.ayt-navbar-inner {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* BRAND */
+
+/* =========================
+   AYTIZ BRAND
+========================= */
+
+.ayt-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.ayt-brand-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+}
+
+.ayt-brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+}
+
+.ayt-brand-text strong {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ayt-brand-text small {
+    margin-top: 5px;
+    font-family: Georgia, serif;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #d7d7d7;
+}
+
+/* DESKTOP NAV */
+
+.ayt-desktop-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 42px;
+}
+
+.ayt-nav-link {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    padding: 10px 0;
+
+    transition: 0.3s ease;
+}
+
+.ayt-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #e50914;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.ayt-nav-link:hover::after,
+.ayt-nav-link.ayt-active::after {
+    width: 100%;
+}
+
+
+/* NAV ACTIONS */
+
+.ayt-nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.ayt-icon-btn,
+.ayt-cart-btn,
+.ayt-menu-button {
+    border: none;
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.ayt-icon-btn svg,
+.ayt-cart-btn svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.7;
+}
+
+.ayt-cart-btn {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ayt-cart-count {
+    position: absolute;
+
+    top: -9px;
+    right: -10px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e50914;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* MOBILE BUTTON */
+
+.ayt-menu-button {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 5px;
+}
+
+.ayt-menu-button span {
+    width: 25px;
+    height: 2px;
+
+    display: block;
+
+    background: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+
+/* MOBILE NAV */
+
+.ayt-mobile-nav {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px 0;
+
+    background: rgba(12, 0, 0, 0.97);
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.ayt-mobile-link {
+    display: block;
+
+    padding: 14px 5%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.ayt-hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 55% 55%,
+            #720000 0%,
+            #330000 28%,
+            #100000 65%,
+            #030000 100%
+        );
+
+    isolation: isolate;
+}
+
+
+/* RED LIGHT */
+
+.ayt-red-glow {
+    position: absolute;
+
+    width: 70vw;
+    height: 70vw;
+
+    max-width: 900px;
+    max-height: 900px;
+
+    left: 50%;
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 0, 0, 0.35),
+        rgba(130, 0, 0, 0.16),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+
+    z-index: -3;
+}
+
+
+/* SMOKE EFFECTS */
+
+.ayt-smoke {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+
+    opacity: 0.5;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 20, 20, 0.7),
+            transparent 70%
+        );
+
+    z-index: -2;
+}
+
+.smoke-one {
+    width: 600px;
+    height: 230px;
+
+    left: -100px;
+    top: 30%;
+
+    transform: rotate(-20deg);
+}
+
+.smoke-two {
+    width: 700px;
+    height: 260px;
+
+    right: -150px;
+    top: 25%;
+
+    transform: rotate(20deg);
+}
+
+.smoke-three {
+    width: 500px;
+    height: 180px;
+
+    left: 35%;
+    bottom: 15%;
+
+    opacity: 0.4;
+}
+
+
+/* HUGE AYT'S */
+
+.ayt-hero-title {
+    position: absolute;
+
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(
+        120px,
+        23vw,
+        390px
+    );
+
+    font-weight: 900;
+
+    letter-spacing: -12px;
+
+    color: rgba(255, 242, 238, 0.94);
+
+    line-height: 0.8;
+
+    z-index: -1;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.12);
+}
+
+
+/* PRODUCT */
+
+.ayt-product-area {
+    position: absolute;
+
+    width: min(48vw, 700px);
+
+    height: min(75vh, 750px);
+
+    right: 20%;
+
+    top: 50%;
+
+    transform: translateY(-45%);
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.ayt-product-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    transform: rotate(-5deg);
+
+    filter:
+        drop-shadow(0 30px 35px rgba(0,0,0,0.8))
+        drop-shadow(0 0 30px rgba(255,0,0,0.3));
+
+    /*
+       Your supplied image has a black background.
+       Screen mode allows the dark background
+       to blend into the hero.
+    */
+    mix-blend-mode: screen;
+}
+
+
+/* HERO TEXT */
+
+.ayt-hero-content {
+    position: absolute;
+
+    left: 5%;
+
+    bottom: 23%;
+
+    width: min(390px, 30vw);
+
+    z-index: 10;
+}
+
+.ayt-small-heading {
+    font-family: Georgia, serif;
+
+    font-size: clamp(
+        19px,
+        2vw,
+        28px
+    );
+
+    letter-spacing: 6px;
+
+    white-space: nowrap;
+}
+
+.ayt-heading-line {
+    display: block;
+
+    width: 44px;
+    height: 3px;
+
+    margin: 15px 0;
+
+    background: #e50914;
+}
+
+.ayt-description {
+    max-width: 370px;
+
+    color: rgba(255,255,255,0.85);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ADD TO CART */
+
+.ayt-add-button {
+    margin-top: 25px;
+
+    min-width: 180px;
+
+    padding: 15px 22px;
+
+    border: none;
+
+    border-radius: 35px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.ayt-add-button:hover {
+    background: #ff1c26;
+
+    transform: translateY(-3px);
+}
+
+.ayt-add-button svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.6;
+}
+
+
+/* GROUND */
+
+.ayt-ground-light {
+    position: absolute;
+
+    left: 25%;
+    right: 10%;
+
+    bottom: 13%;
+
+    height: 4px;
+
+    background: rgba(255,0,0,0.6);
+
+    filter: blur(10px);
+
+    box-shadow:
+        0 0 40px 20px rgba(255,0,0,0.25);
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   FEATURES
+========================================== */
+
+.ayt-features {
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+
+    bottom: 3%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    z-index: 20;
+}
+
+.ayt-feature {
+    text-align: center;
+
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.ayt-feature:last-child {
+    border-right: none;
+}
+
+.ayt-feature-icon {
+    display: block;
+
+    color: #e50914;
+
+    font-size: 25px;
+
+    margin-bottom: 6px;
+}
+
+.ayt-feature strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.ayt-feature small {
+    display: block;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   CART DRAWER
+========================================== */
+
+.ayt-cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 1998;
+}
+
+.ayt-cart-overlay.ayt-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ayt-cart-drawer {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(420px, 92vw);
+    height: 100vh;
+
+    background: #100000;
+
+    border-left: 1px solid rgba(255,255,255,0.1);
+
+    transform: translateX(100%);
+
+    transition: transform 0.35s ease;
+
+    z-index: 1999;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ayt-cart-drawer.ayt-open {
+    transform: translateX(0);
+}
+
+.ayt-cart-header {
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.ayt-cart-header h2 {
+    font-size: 20px;
+}
+
+.ayt-close-cart {
+    border: none;
+    background: none;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.ayt-cart-content {
+    flex: 1;
+
+    padding: 25px;
+    overflow-y: auto;
+}
+
+body.ayt-cart-is-open {
+    overflow: hidden;
+}
+
+.ayt-empty-cart {
+    color: rgba(255,255,255,0.6);
+
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+.ayt-cart-footer {
+    padding: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.ayt-cart-product-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+.ayt-cart-product-info strong {
+    color: #e50914;
+}
+
+
+/* WHATSAPP */
+
+.ayt-whatsapp-order {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.ayt-whatsapp-order:hover {
+    background: #1ebe5b;
+
+    transform: translateY(-2px);
+}
+
+.ayt-whatsapp-order svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+
+    stroke: #ffffff;
+
+    stroke-width: 1.7;
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.ayt-search-box {
+    position: fixed;
+
+    top: 75px;
+    right: 5%;
+
+    width: min(300px, 80vw);
+
+    padding: 10px;
+
+    background: #160000;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+
+    z-index: 1500;
+}
+
+.ayt-search-box.ayt-search-open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.ayt-search-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: #250000;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   PLACEHOLDER SECTIONS
+========================================== */
+
+.ayt-placeholder-section {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #080000;
+}
+
+.ayt-placeholder-section h2 {
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+}
+
+
+@media (max-width: 600px) {
+
+    .ayt-brand-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .ayt-brand-text strong {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    .ayt-brand-text small {
+        font-size: 6px;
+        letter-spacing: 2px;
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .ayt-brand-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ayt-brand-text strong {
+        font-size: 15px;
+    }
+
+    .ayt-brand-text small {
+        font-size: 5px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .ayt-navbar {
+        padding: 16px 4%;
+    }
+
+    .ayt-desktop-nav {
+        gap: 25px;
+    }
+
+    .ayt-hero-title {
+        font-size: 20vw;
+
+        letter-spacing: -8px;
+    }
+
+    .ayt-product-area {
+        width: 48vw;
+
+        height: 65vh;
+
+        right: 7%;
+
+        top: 47%;
+    }
+
+    .ayt-hero-content {
+        width: 310px;
+
+        bottom: 24%;
+    }
+
+    .ayt-description {
+        font-size: 14px;
+    }
+
+    .ayt-features {
+        left: 3%;
+        right: 3%;
+    }
+
+    .ayt-feature {
+        padding: 0 10px;
+    }
+}
+
+
+/* ==========================================
+   TABLET PORTRAIT / SMALL TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+    .ayt-navbar {
+        padding: 14px 5%;
+    }
+
+    .ayt-desktop-nav {
+        display: none;
+    }
+
+    .ayt-menu-button {
+        display: flex;
+    }
+
+    .ayt-mobile-nav.ayt-mobile-open {
+        display: block;
+    }
+
+    .ayt-hero {
+        min-height: 100vh;
+
+        padding-top: 80px;
+    }
+
+    .ayt-hero-title {
+        top: 35%;
+
+        font-size: 22vw;
+
+        letter-spacing: -5px;
+    }
+
+    .ayt-product-area {
+        width: 55vw;
+        height: 50vh;
+
+        right: 50%;
+
+        top: 36%;
+
+        transform: translate(50%, -50%);
+    }
+
+    .ayt-hero-content {
+        left: 7%;
+        bottom: 18%;
+
+        width: 45%;
+    }
+
+    .ayt-small-heading {
+        font-size: 18px;
+
+        letter-spacing: 4px;
+    }
+
+    .ayt-description {
+        font-size: 13px;
+    }
+
+    .ayt-features {
+        bottom: 3%;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ayt-feature {
+        padding: 0 5px;
+    }
+
+    .ayt-feature strong {
+        font-size: 11px;
+    }
+
+    .ayt-feature small {
+        font-size: 9px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .ayt-navbar {
+        padding: 12px 5%;
+    }
+
+    .ayt-brand-mark {
+        width: 34px;
+        height: 34px;
+
+        font-size: 23px;
+    }
+
+    .ayt-brand-text strong {
+        font-size: 18px;
+    }
+
+    .ayt-brand-text small {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .ayt-nav-actions {
+        gap: 10px;
+    }
+
+    .ayt-icon-btn svg,
+    .ayt-cart-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /* HERO */
+
+    .ayt-hero {
+        min-height: 100svh;
+
+        display: block;
+    }
+
+    .ayt-hero-title {
+        top: 27%;
+
+        font-size: 25vw;
+
+        letter-spacing: -3px;
+    }
+
+    .ayt-product-area {
+        width: 88vw;
+        height: 48vh;
+
+        top: 34%;
+
+        right: 50%;
+
+        transform: translate(50%, -50%);
+    }
+
+    .ayt-product-image {
+        transform: rotate(-5deg);
+    }
+
+
+    /* CONTENT */
+
+    .ayt-hero-content {
+        left: 7%;
+        right: 7%;
+
+        bottom: 18%;
+
+        width: auto;
+    }
+
+    .ayt-small-heading {
+        font-size: 17px;
+
+        letter-spacing: 3px;
+    }
+
+    .ayt-heading-line {
+        margin: 10px 0;
+    }
+
+    .ayt-description {
+        max-width: 100%;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    .ayt-add-button {
+        margin-top: 15px;
+
+        padding: 13px 18px;
+    }
+
+
+    /* FEATURES */
+
+    .ayt-features {
+        display: none;
+    }
+
+    .ayt-ground-light {
+        bottom: 15%;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 380px) {
+
+    .ayt-brand-text {
+        display: none;
+    }
+
+    .ayt-product-area {
+        height: 43vh;
+
+        top: 32%;
+    }
+
+    .ayt-hero-content {
+        bottom: 17%;
+    }
+
+    .ayt-small-heading {
+        font-size: 15px;
+    }
+
+    .ayt-description {
+        font-size: 11px;
+    }
+
+    .ayt-add-button {
+        padding: 11px 15px;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================================
+   AYTIZ ABOUT PAGE
+   Same Black / Red / White Identity as Homepage
+========================================================= */
+
+.ayt-about-page {
+    width: 100%;
+    background: #050505;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.ayt-about-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    padding: 130px 8% 80px;
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(110, 0, 0, 0.45),
+            transparent 38%
+        ),
+        linear-gradient(
+            120deg,
+            #030303 0%,
+            #0a0000 55%,
+            #170000 100%
+        );
+    border-bottom: 1px solid rgba(255, 40, 40, 0.18);
+}
+
+
+.ayt-about-hero-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: 12%;
+    top: 150px;
+    background: rgba(210, 0, 0, 0.20);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+.ayt-about-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 48%;
+    max-width: 570px;
+}
+
+
+.ayt-about-label,
+.ayt-about-section-label {
+    display: block;
+    color: #ff2929;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+
+.ayt-about-hero-content h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(58px, 7vw, 100px);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -3px;
+}
+
+
+.ayt-about-hero-content h1 span {
+    color: #ffffff;
+}
+
+
+.ayt-about-hero-content p {
+    max-width: 470px;
+    margin: 30px 0 0;
+    color: #cfcfcf;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+.ayt-about-hero-product {
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 0;
+    width: 47%;
+    height: 650px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.ayt-about-red-light {
+    position: absolute;
+    width: 75%;
+    height: 70%;
+    bottom: 5%;
+    background: rgba(255, 0, 0, 0.18);
+    filter: blur(80px);
+    border-radius: 50%;
+}
+
+
+.ayt-about-hero-product img {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    height: 88%;
+    max-width: 100%;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 30px 45px rgba(0, 0, 0, 0.8))
+        drop-shadow(0 0 35px rgba(255, 0, 0, 0.15));
+}
+
+
+/* =========================================================
+   AYTIZ STORY
+========================================================= */
+
+.ayt-about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 100px 8%;
+    background: #050505;
+}
+
+
+.ayt-about-story-image {
+    display: flex;
+    justify-content: center;
+}
+
+
+.ayt-about-image-frame {
+    position: relative;
+    width: min(100%, 520px);
+    aspect-ratio: 1 / 0.8;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle,
+            rgba(170, 0, 0, 0.35),
+            transparent 65%
+        ),
+        #090000;
+    border: 1px solid rgba(255, 35, 35, 0.25);
+}
+
+
+.ayt-about-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 30px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8));
+}
+
+
+.ayt-about-story-content {
+    max-width: 580px;
+}
+
+
+.ayt-about-story-content h2,
+.ayt-about-heading h2 {
+    margin: 0 0 25px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+
+.ayt-about-story-content p {
+    color: #c5c5c5;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0 0 18px;
+}
+
+
+.ayt-about-story-content strong {
+    display: block;
+    margin-top: 25px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.ayt-about-philosophy {
+    padding: 100px 8%;
+    background: #080808;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.ayt-about-heading {
+    margin-bottom: 50px;
+}
+
+
+.ayt-about-heading h2 {
+    margin-bottom: 0;
+}
+
+
+.ayt-about-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+.ayt-about-philosophy-card {
+    min-height: 230px;
+    padding: 35px 25px;
+    background: #0d0d0d;
+    border: 1px solid #292929;
+    text-align: center;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.ayt-about-philosophy-card:hover {
+    transform: translateY(-6px);
+    border-color: #b80000;
+    background: #110000;
+}
+
+
+.ayt-about-card-icon {
+    display: block;
+    margin-bottom: 22px;
+    color: #ff2929;
+    font-size: 30px;
+}
+
+
+.ayt-about-philosophy-card h3 {
+    margin: 0 0 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+.ayt-about-philosophy-card p {
+    margin: 0;
+    color: #a9a9a9;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AYTIZ EXPERIENCE
+========================================================= */
+
+.ayt-about-experience {
+    padding: 100px 8%;
+    background: #050505;
+}
+
+
+.ayt-about-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+
+
+.ayt-about-experience-item {
+    padding: 40px 25px;
+    text-align: center;
+    border-right: 1px solid #292929;
+}
+
+
+.ayt-about-experience-item:last-child {
+    border-right: none;
+}
+
+
+.ayt-about-experience-item > span {
+    display: block;
+    margin-bottom: 18px;
+    color: #ff2929;
+    font-size: 27px;
+}
+
+
+.ayt-about-experience-item h3 {
+    margin: 0 0 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+
+.ayt-about-experience-item p {
+    margin: 0;
+    color: #9f9f9f;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.ayt-about-cta {
+    position: relative;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 8%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(170, 0, 0, 0.45),
+            transparent 55%
+        ),
+        linear-gradient(
+            120deg,
+            #080000,
+            #210000,
+            #070000
+        );
+    border-top: 1px solid rgba(255, 30, 30, 0.25);
+}
+
+
+.ayt-about-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.ayt-about-cta-content > span {
+    display: block;
+    margin-bottom: 15px;
+    color: #ff2929;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+
+.ayt-about-cta h2 {
+    margin: 0 0 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 500;
+}
+
+
+.ayt-about-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 28px;
+    border: 1px solid #ff2929;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.ayt-about-cta a:hover {
+    background: #ff2929;
+    color: #ffffff;
+}
+
+
+.ayt-about-cta a span {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ayt-about-hero {
+        min-height: 700px;
+        padding: 120px 6% 50px;
+    }
+
+    .ayt-about-hero-content {
+        width: 52%;
+    }
+
+    .ayt-about-hero-content h1 {
+        font-size: clamp(52px, 8vw, 75px);
+    }
+
+    .ayt-about-hero-product {
+        right: 2%;
+        width: 48%;
+        height: 590px;
+    }
+
+    .ayt-about-story {
+        gap: 45px;
+        padding: 80px 6%;
+    }
+
+    .ayt-about-philosophy,
+    .ayt-about-experience {
+        padding: 80px 6%;
+    }
+
+    .ayt-about-philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ayt-about-experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ayt-about-experience-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .ayt-about-experience-item:nth-child(-n+2) {
+        border-bottom: 1px solid #292929;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .ayt-about-hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 125px 5% 50px;
+    }
+
+    .ayt-about-hero-content {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .ayt-about-hero-content h1 {
+        font-size: clamp(48px, 14vw, 68px);
+        letter-spacing: -2px;
+    }
+
+    .ayt-about-hero-content p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .ayt-about-hero-product {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 430px;
+        margin-top: 20px;
+    }
+
+    .ayt-about-hero-product img {
+        height: 100%;
+        max-width: 90%;
+    }
+
+    .ayt-about-story {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 70px 5%;
+    }
+
+    .ayt-about-story-content {
+        max-width: 100%;
+    }
+
+    .ayt-about-philosophy,
+    .ayt-about-experience {
+        padding: 70px 5%;
+    }
+
+    .ayt-about-philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ayt-about-philosophy-card {
+        min-height: auto;
+    }
+
+    .ayt-about-experience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ayt-about-experience-item {
+        padding: 30px 15px;
+    }
+
+    .ayt-about-experience-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .ayt-about-experience-item:nth-child(3) {
+        border-right: 1px solid #292929;
+        border-bottom: none;
+    }
+
+    .ayt-about-experience-item:nth-child(4) {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .ayt-about-cta {
+        min-height: 280px;
+        padding: 60px 5%;
+    }
+
+    .ayt-about-cta h2 {
+        font-size: 45px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .ayt-about-hero {
+        padding-top: 110px;
+    }
+
+    .ayt-about-label,
+    .ayt-about-section-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .ayt-about-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .ayt-about-hero-product {
+        height: 370px;
+    }
+
+    .ayt-about-story-content h2,
+    .ayt-about-heading h2 {
+        font-size: 38px;
+    }
+
+    .ayt-about-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ayt-about-experience-item,
+    .ayt-about-experience-item:nth-child(3) {
+        border-right: none;
+        border-bottom: 1px solid #292929;
+    }
+
+    .ayt-about-experience-item:last-child {
+        border-bottom: none;
+    }
+
+    .ayt-about-cta h2 {
+        font-size: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+/* =========================================================
+   AYTIZ FOOTER
+========================================================= */
+
+.ayt-footer {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 100%,
+            rgba(130, 0, 0, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 100%,
+            rgba(130, 0, 0, 0.28),
+            transparent 35%
+        ),
+        #030303;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 35, 35, 0.25);
+}
+
+
+/* ---------- MAIN FOOTER ---------- */
+
+.ayt-footer-main {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1.15fr;
+    gap: 70px;
+    padding: 80px 8% 65px;
+}
+
+
+/* ---------- BRAND ---------- */
+
+.ayt-footer-logo {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.ayt-footer-logo span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    line-height: 0.9;
+    letter-spacing: 8px;
+}
+
+
+.ayt-footer-logo small {
+    width: fit-content;
+    margin-top: 9px;
+    padding-top: 4px;
+    border-top: 3px solid #ff2929;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+
+.ayt-footer-tagline {
+    margin: 30px 0 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+
+.ayt-footer-description {
+    max-width: 350px;
+    margin: 0;
+    color: #a9a9a9;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ---------- SOCIALS ---------- */
+
+.ayt-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+
+.ayt-social {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.ayt-social:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+
+
+.ayt-social svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+
+/* Instagram */
+.ayt-social.instagram {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+    color: #ffffff;
+}
+
+
+/* X */
+.ayt-social.x-social {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* TikTok */
+.ayt-social.tiktok {
+    background: #050505;
+    color: #ffffff;
+    border: 1px solid #333333;
+    text-shadow:
+        2px 0 #25f4ee,
+        -2px 0 #fe2c55;
+}
+
+
+/* Telegram */
+.ayt-social.telegram {
+    background: #229ed9;
+    color: #ffffff;
+}
+
+
+/* WhatsApp */
+.ayt-social.whatsapp {
+    background: #25d366;
+    color: #ffffff;
+}
+
+
+/* ---------- COLUMN HEADINGS ---------- */
+
+.ayt-footer-contact h3,
+.ayt-footer-connect h3 {
+    margin: 0 0 30px;
+    color: #ff2929;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.ayt-footer-contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+
+.ayt-footer-contact-icon {
+    flex-shrink: 0;
+    width: 24px;
+    color: #ff2929;
+    font-size: 21px;
+    text-align: center;
+}
+
+
+.ayt-footer-contact-item small {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+.ayt-footer-contact-item p,
+.ayt-footer-contact-item a {
+    margin: 0;
+    color: #999999;
+    font-size: 13px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+
+.ayt-footer-contact-item a:hover {
+    color: #ff2929;
+}
+
+
+/* ---------- STAY CONNECTED ---------- */
+
+.ayt-footer-connect p {
+    max-width: 390px;
+    margin: 0 0 22px;
+    color: #a9a9a9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+.ayt-footer-newsletter {
+    display: flex;
+    width: 100%;
+    max-width: 430px;
+    height: 50px;
+    border: 1px solid #444444;
+}
+
+
+.ayt-footer-newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+
+.ayt-footer-newsletter input::placeholder {
+    color: #777777;
+}
+
+
+.ayt-footer-newsletter button {
+    width: 55px;
+    border: none;
+    background: #ff2929;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+.ayt-footer-newsletter button:hover {
+    background: #c90000;
+}
+
+
+.ayt-footer-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    max-width: 420px;
+    margin-top: 16px;
+    color: #858585;
+    font-size: 11px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+
+.ayt-footer-consent input {
+    margin-top: 2px;
+    accent-color: #ff2929;
+}
+
+
+/* ---------- BOTTOM ---------- */
+
+.ayt-footer-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 25px 8%;
+    border-top: 1px solid rgba(255, 40, 40, 0.35);
+}
+
+
+.ayt-footer-bottom p {
+    margin: 0;
+    color: #888888;
+    font-size: 12px;
+}
+
+
+.ayt-footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.ayt-footer-legal a {
+    color: #999999;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+.ayt-footer-legal a:hover {
+    color: #ff2929;
+}
+
+
+.ayt-footer-legal span {
+    color: #ff2929;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ayt-footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 55px;
+        padding: 70px 6% 55px;
+    }
+
+    .ayt-footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .ayt-footer-connect {
+        grid-column: 1 / -1;
+    }
+
+    .ayt-footer-bottom {
+        padding: 22px 6%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ayt-footer-main {
+        display: block;
+        padding: 60px 5% 45px;
+    }
+
+    .ayt-footer-brand {
+        margin-bottom: 45px;
+    }
+
+    .ayt-footer-logo span {
+        font-size: 42px;
+    }
+
+    .ayt-footer-tagline {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .ayt-footer-contact {
+        margin-bottom: 45px;
+        padding-top: 35px;
+        border-top: 1px solid rgba(255, 40, 40, 0.25);
+    }
+
+    .ayt-footer-connect {
+        padding-top: 35px;
+        border-top: 1px solid rgba(255, 40, 40, 0.25);
+    }
+
+    .ayt-footer-newsletter {
+        height: 48px;
+    }
+
+    .ayt-footer-bottom {
+        display: block;
+        padding: 22px 5%;
+        text-align: center;
+    }
+
+    .ayt-footer-bottom p {
+        margin-bottom: 15px;
+    }
+
+    .ayt-footer-legal {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .ayt-footer-socials {
+        gap: 10px;
+    }
+
+    .ayt-social {
+        width: 36px;
+        height: 36px;
+    }
+
+    .ayt-footer-legal {
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   AYTIZ SHOP PAGE
+===================================================== */
+
+.ayt-shop-page {
+  background: #050505;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+/* SHOP HERO
+===================================================== */
+
+.ayt-shop-hero {
+  min-height: 720px;
+  padding: 150px 7% 90px;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  background:
+    radial-gradient(circle at 75% 50%, rgba(120, 0, 0, .35), transparent 35%),
+    linear-gradient(120deg, #050505, #100000 70%, #050505);
+}
+
+.ayt-shop-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.ayt-shop-eyebrow {
+  color: #e00000;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.ayt-shop-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: .98;
+  font-weight: 400;
+  margin: 25px 0;
+}
+
+.ayt-shop-hero h1 span {
+  display: block;
+  color: #ddd;
+  font-style: italic;
+}
+
+.ayt-shop-hero p {
+  color: #aaa;
+  max-width: 480px;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.ayt-shop-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  padding: 16px 25px;
+  background: #c90000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.ayt-shop-hero-btn:hover {
+  background: #f00000;
+  transform: translateY(-3px);
+}
+
+.ayt-shop-hero-image {
+  position: relative;
+  height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ayt-shop-hero-image img {
+  width: min(430px, 90%);
+  max-height: 570px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,.8));
+}
+
+.ayt-shop-red-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: rgba(180, 0, 0, .3);
+  filter: blur(100px);
+}
+
+
+/* SEARCH + CATEGORIES
+===================================================== */
+
+.ayt-shop-tools {
+  padding: 55px 7% 20px;
+  background: #080808;
+}
+
+.ayt-shop-search {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #292929;
+  background: #111;
+  min-height: 58px;
+}
+
+.ayt-search-symbol {
+  color: #aaa;
+  font-size: 28px;
+  padding-left: 20px;
+}
+
+.ayt-shop-search input {
+  flex: 1;
+  height: 56px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.ayt-shop-search input::placeholder {
+  color: #777;
+}
+
+.ayt-shop-search button {
+  height: 58px;
+  padding: 0 28px;
+  border: none;
+  background: #c90000;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.ayt-shop-search button:hover {
+  background: #ed0000;
+}
+
+.ayt-shop-categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 35px 0 20px;
+}
+
+.ayt-category-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 11px 18px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: .25s ease;
+}
+
+.ayt-category-btn:hover,
+.ayt-category-btn.active {
+  background: #c90000;
+  border-color: #c90000;
+  color: #fff;
+}
+
+
+/* PRODUCT SECTION
+===================================================== */
+
+.ayt-products-section {
+  padding: 70px 7% 100px;
+  background: #080808;
+}
+
+.ayt-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.ayt-section-heading span {
+  color: #d00000;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.ayt-section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 4vw, 58px);
+  font-weight: 400;
+  margin: 12px 0 0;
+}
+
+.ayt-section-heading p {
+  color: #888;
+  max-width: 320px;
+  line-height: 1.7;
+}
+
+.ayt-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.ayt-product-card {
+  background: #101010;
+  border: 1px solid #202020;
+  transition: .35s ease;
+}
+
+.ayt-product-card:hover {
+  transform: translateY(-7px);
+  border-color: #4c0000;
+}
+
+.ayt-product-image-wrap {
+  height: 360px;
+  background:
+    radial-gradient(circle at center, #2a0808, #0b0b0b 65%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ayt-product-image {
+  width: 82%;
+  height: 90%;
+  object-fit: contain;
+  transition: .4s ease;
+}
+
+.ayt-product-card:hover .ayt-product-image {
+  transform: scale(1.05);
+}
+
+.ayt-product-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  background: #c90000;
+  color: #fff;
+  padding: 7px 10px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.ayt-product-badge.new {
+  background: #fff;
+  color: #000;
+}
+
+.ayt-product-badge.sold {
+  background: #333;
+  color: #ddd;
+}
+
+.ayt-product-quick-add {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #c90000;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .3s ease;
+}
+
+.ayt-product-card:hover .ayt-product-quick-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ayt-product-info {
+  padding: 22px;
+}
+
+.ayt-product-brand {
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.ayt-product-info h3 {
+  margin: 8px 0;
+  font-size: 20px;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.ayt-product-notes {
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.ayt-product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ayt-product-bottom strong {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.ayt-add-product {
+  border: 1px solid #c90000;
+  background: transparent;
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.ayt-add-product:hover {
+  background: #c90000;
+}
+
+.ayt-add-product.sold-out {
+  border-color: #333;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.ayt-no-products {
+  display: none;
+  text-align: center;
+  color: #777;
+  padding: 50px 0;
+}
+
+
+/* EDITORIAL
+===================================================== */
+
+.ayt-shop-editorial {
+  min-height: 470px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 70px 7%;
+  background:
+    linear-gradient(90deg, #080000, rgba(20,0,0,.75)),
+    #080808;
+}
+
+.ayt-editorial-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.ayt-editorial-content > span {
+  color: #d00000;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.ayt-editorial-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(50px, 7vw, 90px);
+  font-weight: 400;
+  line-height: .95;
+  margin: 18px 0;
+}
+
+.ayt-editorial-content h2 em {
+  color: #c90000;
+}
+
+.ayt-editorial-content p {
+  color: #999;
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+.ayt-editorial-content a {
+  display: inline-block;
+  margin-top: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #c90000;
+  padding-bottom: 8px;
+}
+
+.ayt-editorial-glow {
+  position: absolute;
+  right: 10%;
+  width: 450px;
+  height: 450px;
+  background: rgba(150, 0, 0, .25);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+
+/* FEATURED PRODUCT
+===================================================== */
+
+.ayt-featured-product {
+  padding: 110px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  background: #050505;
+}
+
+.ayt-featured-image {
+  min-height: 550px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #280606, #080808 65%);
+}
+
+.ayt-featured-image > span {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #d00000;
+  letter-spacing: 3px;
+  font-size: 10px;
+}
+
+.ayt-featured-image img {
+  width: 70%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.ayt-featured-label {
+  color: #d00000;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ayt-featured-info h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(45px, 5vw, 75px);
+  font-weight: 400;
+  margin: 18px 0 8px;
+}
+
+.ayt-featured-info h4 {
+  color: #aaa;
+  font-weight: 400;
+}
+
+.ayt-featured-info > p {
+  color: #888;
+  line-height: 1.9;
+  max-width: 480px;
+}
+
+.ayt-featured-price {
+  font-size: 28px;
+  margin: 30px 0;
+}
+
+.ayt-featured-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.ayt-featured-cart {
+  border: none;
+  background: #c90000;
+  color: #fff;
+  padding: 15px 25px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.ayt-featured-actions a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+/* FINAL CTA
+===================================================== */
+
+.ayt-shop-final {
+  text-align: center;
+  padding: 120px 7%;
+  background:
+    radial-gradient(circle, rgba(130,0,0,.3), transparent 55%),
+    #080000;
+}
+
+.ayt-shop-final > span {
+  color: #d00000;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.ayt-shop-final h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(50px, 8vw, 100px);
+  font-weight: 400;
+  line-height: .95;
+  margin: 20px 0;
+}
+
+.ayt-shop-final h2 em {
+  color: #c90000;
+}
+
+.ayt-shop-final p {
+  color: #888;
+}
+
+.ayt-shop-final a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 25px;
+  color: #fff;
+  background: #c90000;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+/* TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .ayt-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ayt-shop-hero {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .ayt-featured-product {
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 45px;
+  }
+
+}
+
+
+/* MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .ayt-shop-hero {
+    min-height: auto;
+    padding: 130px 6% 70px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ayt-shop-hero-content {
+    order: 1;
+  }
+
+  .ayt-shop-hero-image {
+    order: 2;
+    height: 390px;
+    width: 100%;
+  }
+
+  .ayt-shop-hero-image img {
+    max-height: 390px;
+  }
+
+  .ayt-shop-red-glow {
+    width: 250px;
+    height: 250px;
+  }
+
+  .ayt-shop-hero h1 {
+    font-size: clamp(42px, 13vw, 60px);
+  }
+
+  .ayt-shop-hero p {
+    font-size: 14px;
+  }
+
+  .ayt-shop-tools {
+    padding: 35px 5% 10px;
+  }
+
+  .ayt-shop-search {
+    min-height: 52px;
+  }
+
+  .ayt-shop-search input {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .ayt-shop-search button {
+    display: none;
+  }
+
+  .ayt-search-symbol {
+    padding-left: 14px;
+  }
+
+  .ayt-shop-categories {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .ayt-category-btn {
+    white-space: nowrap;
+  }
+
+  .ayt-products-section {
+    padding: 60px 5% 70px;
+  }
+
+  .ayt-section-heading {
+    display: block;
+  }
+
+  .ayt-section-heading h2 {
+    font-size: 42px;
+  }
+
+  .ayt-section-heading p {
+    margin-top: 15px;
+  }
+
+  .ayt-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ayt-product-image-wrap {
+    height: 250px;
+  }
+
+  .ayt-product-info {
+    padding: 14px;
+  }
+
+  .ayt-product-info h3 {
+    font-size: 16px;
+  }
+
+  .ayt-product-notes {
+    font-size: 10px;
+  }
+
+  .ayt-product-bottom {
+    display: block;
+  }
+
+  .ayt-product-bottom strong {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .ayt-add-product {
+    width: 100%;
+  }
+
+  .ayt-product-quick-add {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ayt-shop-editorial {
+    min-height: 420px;
+    padding: 70px 7%;
+  }
+
+  .ayt-editorial-glow {
+    right: -30%;
+  }
+
+  .ayt-featured-product {
+    grid-template-columns: 1fr;
+    padding: 70px 6%;
+    gap: 45px;
+  }
+
+  .ayt-featured-image {
+    min-height: 400px;
+  }
+
+  .ayt-featured-image img {
+    max-height: 360px;
+  }
+
+  .ayt-featured-info h2 {
+    font-size: 50px;
+  }
+
+  .ayt-shop-final {
+    padding: 90px 6%;
+  }
+
+}
+
+
+/* SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .ayt-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ayt-product-image-wrap {
+    height: 330px;
+  }
+
+  .ayt-shop-hero {
+    padding-top: 115px;
+  }
+
+  .ayt-featured-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ayt-featured-actions a {
+    text-align: center;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   AYTIZ CART PRODUCT ITEMS
+   ===================================================== */
+
+.ayt-cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ayt-cart-item {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ayt-cart-item-image-wrap {
+    width: 68px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(
+        circle,
+        rgba(150, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.9)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ayt-cart-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ayt-cart-item-image-placeholder {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.ayt-cart-item-info {
+    min-width: 0;
+}
+
+.ayt-cart-item-name {
+    margin: 0 0 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.ayt-cart-item-price {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.ayt-cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.ayt-cart-qty-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease;
+}
+
+.ayt-cart-qty-btn:hover {
+    background: #b00000;
+    border-color: #b00000;
+}
+
+.ayt-cart-qty-value {
+    min-width: 22px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.ayt-cart-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.ayt-cart-item-total {
+    color: #ff2929;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.ayt-cart-remove {
+    border: 0;
+    background: transparent;
+    color: #777;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.25s ease;
+}
+
+.ayt-cart-remove:hover {
+    color: #ff2929;
+}
+
+.ayt-cart-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.ayt-cart-total-row strong {
+    color: #ff2929;
+    font-size: 18px;
+}
+
+.ayt-empty-cart {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.ayt-empty-cart-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.ayt-empty-cart h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.ayt-empty-cart p {
+    margin: 0;
+    max-width: 260px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CART MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .ayt-cart-item {
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .ayt-cart-item-image-wrap {
+        width: 58px;
+        height: 68px;
+    }
+
+    .ayt-cart-item-right {
+        grid-column: 2;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ayt-cart-item-name {
+        font-size: 13px;
+    }
+
+    .ayt-cart-total-row strong {
+        font-size: 16px;
+    }
+
+}
+
+/* SHOP RESPONSIVE REFINEMENTS
+===================================================== */
+
+.ayt-shop-page,
+.ayt-shop-page > section,
+.ayt-shop-page .ayt-product-card,
+.ayt-shop-page .ayt-product-info {
+    min-width: 0;
+}
+
+.ayt-shop-page img {
+    max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .ayt-shop-hero {
+        min-height: 0;
+        padding: 130px 5% 70px;
+        gap: 30px;
+    }
+
+    .ayt-shop-hero h1 {
+        font-size: clamp(44px, 6vw, 72px);
+    }
+
+    .ayt-shop-hero-image {
+        height: clamp(380px, 48vw, 520px);
+    }
+
+    .ayt-featured-product {
+        padding: 80px 7%;
+        gap: 40px;
+    }
+
+    .ayt-featured-image {
+        min-height: 440px;
+    }
+}
+
+@media (max-width: 700px) {
+    .ayt-shop-hero {
+        padding: 120px 6% 55px;
+    }
+
+    .ayt-shop-hero h1 {
+        font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .ayt-shop-hero-image {
+        height: clamp(230px, 65vw, 360px);
+    }
+
+    .ayt-shop-hero-image img {
+        max-height: 100%;
+    }
+
+    .ayt-shop-eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .ayt-shop-search {
+        min-width: 0;
+    }
+
+    .ayt-shop-search input {
+        width: 0;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    .ayt-shop-search button {
+        display: block;
+        flex: 0 0 auto;
+        height: 52px;
+        padding: 0 14px;
+        font-size: 10px;
+        letter-spacing: .5px;
+    }
+
+    .ayt-shop-categories {
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    .ayt-shop-categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ayt-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .ayt-product-image-wrap {
+        height: clamp(165px, 42vw, 250px);
+    }
+
+    .ayt-product-info {
+        padding: clamp(10px, 2.5vw, 15px);
+    }
+
+    .ayt-product-info h3 {
+        font-size: clamp(15px, 3vw, 18px);
+        overflow-wrap: anywhere;
+    }
+
+    .ayt-product-notes {
+        line-height: 1.5;
+    }
+
+    .ayt-product-bottom {
+        align-items: stretch;
+    }
+
+    .ayt-add-product {
+        min-height: 40px;
+        padding: 9px 8px;
+    }
+
+    .ayt-featured-image {
+        min-height: clamp(280px, 80vw, 400px);
+    }
+
+    .ayt-featured-image img {
+        max-height: 90%;
+    }
+
+    .ayt-shop-final h2 {
+        font-size: clamp(42px, 12vw, 72px);
+    }
+}
+
+@media (max-width: 420px) {
+    .ayt-shop-hero {
+        padding: 112px 5% 45px;
+    }
+
+    .ayt-shop-hero h1 {
+        font-size: clamp(36px, 10.5vw, 44px);
+        margin: 18px 0;
+    }
+
+    .ayt-shop-hero p {
+        font-size: 13px;
+    }
+
+    .ayt-shop-tools,
+    .ayt-products-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .ayt-shop-search button {
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .ayt-search-symbol {
+        padding-left: 10px;
+    }
+
+    .ayt-products-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .ayt-product-image-wrap {
+        height: clamp(220px, 72vw, 300px);
+    }
+
+    .ayt-product-info {
+        padding: 16px;
+    }
+
+    .ayt-product-info h3 {
+        font-size: 18px;
+    }
+
+    .ayt-product-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .ayt-product-bottom strong {
+        margin-bottom: 0;
+    }
+
+    .ayt-add-product {
+        width: auto;
+    }
+
+    .ayt-section-heading h2 {
+        font-size: clamp(34px, 10vw, 42px);
+    }
+
+    .ayt-editorial-content h2,
+    .ayt-featured-info h2 {
+        font-size: clamp(40px, 12vw, 50px);
+    }
+}
