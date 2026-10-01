@@ -662,6 +662,7 @@ body {
 
     width: min(420px, 92vw);
     height: 100vh;
+    height: 100dvh;
 
     background: #100000;
 
@@ -687,6 +688,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex: 0 0 auto;
 
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -707,7 +709,8 @@ body {
 }
 
 .ayt-cart-content {
-    flex: 1;
+    flex: 1 1 auto;
+    min-height: 0;
 
     padding: 25px;
     overflow-y: auto;
@@ -727,6 +730,8 @@ body.ayt-cart-is-open {
 
 .ayt-cart-footer {
     padding: 25px;
+    padding-bottom: max(25px, env(safe-area-inset-bottom));
+    flex: 0 0 auto;
 
     border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -3258,6 +3263,29 @@ body.ayt-cart-is-open {
    ===================================================== */
 
 @media (max-width: 480px) {
+
+    .ayt-cart-header {
+        padding: 16px 20px;
+    }
+
+    .ayt-cart-content {
+        padding: 16px 20px;
+    }
+
+    .ayt-cart-footer {
+        padding: 14px 18px;
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+    .ayt-cart-product-info {
+        margin-bottom: 12px;
+        font-size: 13px;
+    }
+
+    .ayt-whatsapp-order {
+        min-height: 48px;
+        padding: 12px;
+    }
 
     .ayt-cart-item {
         grid-template-columns: 58px minmax(0, 1fr);
